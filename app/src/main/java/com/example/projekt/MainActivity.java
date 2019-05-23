@@ -29,14 +29,14 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<Companies> lukasBerg=new ArrayList<>();
+    private ArrayList<Companies> lukasCompanies=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayAdapter<Companies> adapter=new ArrayAdapter<Companies>(this,R.layout.list_item_textview,R.id.my_item_textview, lukasBerg);
+        ArrayAdapter<Companies> adapter=new ArrayAdapter<Companies>(this,R.layout.list_item_textview,R.id.my_item_textview, lukasCompanies);
 
         ListView my_listView=(ListView) findViewById(R.id.my_listview);
 
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-                Toast.makeText(getApplicationContext(),lukasBerg.get(position).info(),Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),lukasCompanies.get(position).info(),Toast.LENGTH_LONG).show();
 
             }
         });
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         if(id == R.id.action_about) {
             //När man trycker på about knappen utförs både en refresh på sidan för listan och information om appens visas
-            lukasBerg.clear();
+            lukasCompanies.clear();
             Toast.makeText(getApplicationContext(),"This app is about the companies that had the best revenue in Sweden in the year 2016 \n \n The companies rating is based on their postition in the list",Toast.LENGTH_LONG).show();
             new FetchData().execute();
             return true;}
@@ -146,12 +146,12 @@ public class MainActivity extends AppCompatActivity {
                     String foreOmrade = fore.getString("company");
                     Log.d("a18lukto", foreName+" "+foreLocation+" "+foreAnstallda);
 
-                    lukasBerg.add(new Companies(foreName,foreLocation,foreAnstallda,foreOmsattning,foreOmrade));
+                    lukasCompanies.add(new Companies(foreName,foreLocation,foreAnstallda,foreOmsattning,foreOmrade));
 
 
                 }
 
-                ArrayAdapter<Companies> adapter=new ArrayAdapter<Companies>(getApplicationContext(),R.layout.list_item_textview,R.id.my_item_textview, lukasBerg);
+                ArrayAdapter<Companies> adapter=new ArrayAdapter<Companies>(getApplicationContext(),R.layout.list_item_textview,R.id.my_item_textview, lukasCompanies);
 
                 ListView my_listView=(ListView) findViewById(R.id.my_listview);
 
