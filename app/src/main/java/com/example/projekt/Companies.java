@@ -1,6 +1,6 @@
 package com.example.projekt;
 
-public class Mountain {
+public class Companies {
     //Skapa statements här
     private String name;
     private String location;
@@ -10,7 +10,7 @@ public class Mountain {
 
 
     //standard konstruktor
-    public Mountain(){
+    public Companies(){
         name="Saknar namn";
         location="Saknar Plats";
         Anstallda=-1;
@@ -18,7 +18,7 @@ public class Mountain {
         Type="Saknar typ";
     }
 
-    public Mountain(String n, String l, int h, int o, String t){
+    public Companies(String n, String l, int h, int o, String t){
         name=n;
         location=l;
         Anstallda=h;

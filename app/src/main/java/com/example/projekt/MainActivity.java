@@ -29,14 +29,14 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<Mountain> lukasBerg=new ArrayList<>();
+    private ArrayList<Companies> lukasBerg=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayAdapter<Mountain> adapter=new ArrayAdapter<Mountain>(this,R.layout.list_item_textview,R.id.my_item_textview, lukasBerg);
+        ArrayAdapter<Companies> adapter=new ArrayAdapter<Companies>(this,R.layout.list_item_textview,R.id.my_item_textview, lukasBerg);
 
         ListView my_listView=(ListView) findViewById(R.id.my_listview);
 
@@ -146,12 +146,12 @@ public class MainActivity extends AppCompatActivity {
                     String foreOmrade = fore.getString("company");
                     Log.d("a18lukto", foreName+" "+foreLocation+" "+foreAnstallda);
 
-                    lukasBerg.add(new Mountain(foreName,foreLocation,foreAnstallda,foreOmsattning,foreOmrade));
+                    lukasBerg.add(new Companies(foreName,foreLocation,foreAnstallda,foreOmsattning,foreOmrade));
 
 
                 }
 
-                ArrayAdapter<Mountain> adapter=new ArrayAdapter<Mountain>(getApplicationContext(),R.layout.list_item_textview,R.id.my_item_textview, lukasBerg);
+                ArrayAdapter<Companies> adapter=new ArrayAdapter<Companies>(getApplicationContext(),R.layout.list_item_textview,R.id.my_item_textview, lukasBerg);
 
                 ListView my_listView=(ListView) findViewById(R.id.my_listview);
 
