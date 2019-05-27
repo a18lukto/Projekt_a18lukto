@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             //När man trycker på about knappen utförs både en refresh på sidan för listan och information om appens visas
             lukasCompanies.clear();
 
-            Toast.makeText(getApplicationContext(),"This app is about the companies that had the best revenue in Sweden in the year 2016 \n \n The companies rating is based on their postition in the list",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"This app is about the companies that had the best revenue in Sweden in the year 2016 \n \n You can use this list to find the best place to make money! \n \n The companies rating is based on their postition in the list",Toast.LENGTH_LONG).show();
 
 
             new FetchData().execute();
